@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flat Management Services</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
 
+    header {
+      background-color: #007bff;
+      padding: 20px 0;
+    }
+
+    header h1, header h4 {
+      color: #fff;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .services-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .service-card {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    footer {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 class="display-4">Flat Management Services</h1>
+      <h4 class="lead">Simplify Your Living Experience with Our Comprehensive Services</h4>
+    </div>
+  </header>
+
+  <div class="hero-section">
+    <div class="container">
+      <h2>Effortless Flat Management</h2>
+      <p class="lead">Simplify your property management with our reliable and efficient services.</p>
+      <a href="#services" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+  </div>
+
+  <div id="services" class="services-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="service-card">
+            <h3>Property Maintenance</h3>
+            <p>We handle property maintenance, repairs, and upkeep to ensure your property is well-maintained.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-card">
+            <h3>Tenant Management</h3>
+            <p>We assist in finding and managing tenants, making the process seamless for property owners.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-card">
+            <h3>Financial Management</h3>
+            <p>Our services include rent collection, budgeting, and financial reporting for property owners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="container">
+      <h2>Ready to Simplify Your Flat Management?</h2>
+      <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Flat Management Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
