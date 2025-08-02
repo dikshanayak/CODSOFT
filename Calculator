@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
 
+    #calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 8px;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    #display {
+      grid-column: span 4;
+      height: 40px;
+      font-size: 1.5em;
+      text-align: right;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 1.2em;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button.operator {
+      background-color: #ff9a8b;
+    }
+
+    button.double {
+      grid-column: span 2;
+    }
+
+    button.equals {
+      background-color: #3b5998;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="calculator">
+    <div id="display"></div>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button class="operator">/</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button class="operator">*</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button class="operator">-</button>
+    <button class="double">0</button>
+    <button>.</button>
+    <button class="equals double">=</button>
+    <button class="operator">+</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const display = document.getElementById('display');
+      const buttons = document.querySelectorAll('button');
+      let currentInput = '';
+      let operator = '';
+      let firstOperand = null;
+
+      buttons.forEach(button => {
+        button.addEventListener('click', function () {
+          handleButtonClick(button.textContent);
+        });
+      });
+
+      function handleButtonClick(value) {
+        if (isDigit(value)) {
+          handleDigit(value);
+        } else if (isOperator(value)) {
+          handleOperator(value);
+        } else if (value === '=') {
+          handleEquals();
+        }
+        updateDisplay();
+      }
+
+      function isDigit(value) {
+        return /^\d+$/.test(value);
+      }
+
+      function isOperator(value) {
+        return ['+', '-', '*', '/'].includes(value);
+      }
+
+      function handleDigit(value) {
+        currentInput += value;
+      }
+
+      function handleOperator(value) {
+        if (currentInput !== '') {
+          if (firstOperand === null) {
+            firstOperand = parseFloat(currentInput);
+            operator = value;
+            currentInput = '';
+          } else {
+            handleEquals();
+            operator = value;
+          }
+        }
+      }
+
+      function handleEquals() {
+        if (currentInput !== '') {
+          const secondOperand = parseFloat(currentInput);
+          switch (operator) {
+            case '+':
+              firstOperand += secondOperand;
+              break;
+            case '-':
+              firstOperand -= secondOperand;
+              break;
+            case '*':
+              firstOperand *= secondOperand;
+              break;
+            case '/':
+              if (secondOperand !== 0) {
+                firstOperand /= secondOperand;
+              } else {
+                alert('Cannot divide by zero!');
+                clearCalculator();
+              }
+              break;
+            default:
+              break;
+          }
+          currentInput = '';
+          operator = '';
+        }
+      }
+
+      function updateDisplay() {
+        display.textContent = currentInput !== '' ? currentInput : firstOperand !== null ? firstOperand : '0';
+      }
+
+      function clearCalculator() {
+        currentInput = '';
+        operator = '';
+        firstOperand = null;
+        updateDisplay();
+      }
+    });
+  </script>
+
+</body>
+</html>
