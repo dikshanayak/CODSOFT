@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diksha Nayak- Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Diksha Nayak</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src=".jpeg" alt="Diksha Nayak">
+        <p>
+            My name is Diksha Nayak . I am from gorakhpur uttar pradesh. I have done my bachelor's in Computer Application . Now I am persuing Master's in Computer Application from Galgotia's University Greater Noida.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Responsive Web Design</li>
+            
+        </ul>
+    </section>
+
+    <section id="Project">
+        <h2>Text summerization using NLP</h2>
+        <div>
+            <h3></h3>
+            <p>Description. (The process of selecting the most crucial information from a text or group of related texts and condensing it while maintaining)</p>
+            <img src="pro.png" alt="Project 1">
+        </div>
+    
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Download my resume <a href="RESUME.docx" target="_blank">here</a>.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: dikshanayak94@gmail.com</p>
+        <p>Phone: 7905209981</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Diksha Nayak. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
